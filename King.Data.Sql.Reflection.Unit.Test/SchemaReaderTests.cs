@@ -10,7 +10,7 @@
     using King.Data.Sql.Reflection.Models;
 
     [TestFixture]
-    public class SchemaLoader
+    public class SchemaReaderTests
     {
         [Test]
         public void Constructor()

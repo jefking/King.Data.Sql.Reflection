@@ -60,7 +60,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="SchemaLoader.cs" />
+    <Compile Include="SchemaReaderTests.cs" />
     <Compile Include="Models\DefinitionComparerTests.cs" />
     <Compile Include="Models\DefinitionTests.cs" />
     <Compile Include="Models\SchemaTests.cs" />

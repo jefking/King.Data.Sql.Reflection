@@ -13,7 +13,7 @@
     using System.Threading.Tasks;
 
     [TestFixture]
-    public class SchemaLoaderTests
+    public class SchemaReaderTests
     {
         #region Members
         private readonly string connectionString = ConfigurationManager.AppSettings["database"];

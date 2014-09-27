@@ -10,7 +10,7 @@
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Data Loader
+    /// Schema Reader
     /// </summary>
     public class SchemaReader : IDataLoader
     {
