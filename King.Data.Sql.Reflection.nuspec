@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>King.Data.Sql.Reflection</id>
+        <version>0.0.1</version>
+        <title>King.Data.Sql.Reflection</title>
+        <authors>Jef King</authors>
+        <owners>Jef King</owners>
+        <licenseUrl>https://github.com/jefking/King.Data.Sql.Reflection/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/jefking/King.Data.Sql.Reflection</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/jefking/King.Data.Sql.Reflection/master/icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description></description>
+        <summary></summary>
+      <releaseNotes>PRE-ALPHA</releaseNotes>
+        <copyright>Jef King</copyright>
+        <language>en-US</language>
+        <tags>King.Data.Sql.Reflection SQL SQL-Server Reflection</tags>
+    </metadata>
+    <files>
+        <file src="King.Data.Sql.Reflection\bin\Release\King.Data.Sql.Reflection.dll" target="content\King.ATrak\King.Data.Sql.Reflection.dll" />
+    </files>
+</package>
