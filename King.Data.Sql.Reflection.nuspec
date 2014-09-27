@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>King.Data.Sql.Reflection</id>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <title>King.Data.Sql.Reflection</title>
     <authors>Jef King</authors>
     <owners>Jef King</owners>
@@ -12,19 +12,19 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>SQL Server Schema Reflection</description>
     <summary>SQL Server Schema Reflection</summary>
-    <releaseNotes>PRE-ALPHA</releaseNotes>
+    <releaseNotes>BETA Release</releaseNotes>
     <copyright>Jef King</copyright>
     <language>en-US</language>
     <tags>King.Data.Sql.Reflection SQL SQL-Server Reflection</tags>
+    <dependencies>
+      <dependency id="King.Mapper" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net451" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework="net451" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="net451" />
+    </frameworkAssemblies>
   </metadata>
-  <dependencies>
-    <dependency id="King.Mapper" />
-  </dependencies>
-  <frameworkAssemblies>
-    <frameworkAssembly assemblyName="System" targetFramework="net451" />
-    <frameworkAssembly assemblyName="System.Data" targetFramework="net451" />
-    <frameworkAssembly assemblyName="System.Xml" targetFramework="net451" />
-  </frameworkAssemblies>
   <files>
     <file src="King.Data.Sql.Reflection\bin\Release\King.Data.Sql.Reflection.dll" target="lib\net451\King.Data.Sql.Reflection.dll" />
   </files>
