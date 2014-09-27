@@ -10,14 +10,14 @@
         <projectUrl>https://github.com/jefking/King.Data.Sql.Reflection</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/jefking/King.Data.Sql.Reflection/master/icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description></description>
-        <summary></summary>
+        <description>SQL Server Schema Reflection</description>
+        <summary>SQL Server Schema Reflection</summary>
       <releaseNotes>PRE-ALPHA</releaseNotes>
         <copyright>Jef King</copyright>
         <language>en-US</language>
         <tags>King.Data.Sql.Reflection SQL SQL-Server Reflection</tags>
     </metadata>
     <files>
-        <file src="King.Data.Sql.Reflection\bin\Release\King.Data.Sql.Reflection.dll" target="content\King.ATrak\King.Data.Sql.Reflection.dll" />
+        <file src="King.Data.Sql.Reflection\bin\Release\King.Data.Sql.Reflection.dll" target="lib\net451\King.Data.Sql.Reflection.dll" />
     </files>
 </package>
