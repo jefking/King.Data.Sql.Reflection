@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.Integration.Test", "King.Data.Sql.Reflection.Integration.Test\King.Data.Sql.Reflection.Integration.Test.csproj", "{28A4B2EB-2EC4-457A-8C3C-253470CE83BD}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "King.Data.Sql.Reflection.Data", "King.Data.Sql.Reflection.Data\King.Data.Sql.Reflection.Data.sqlproj", "{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 		{28A4B2EB-2EC4-457A-8C3C-253470CE83BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28A4B2EB-2EC4-457A-8C3C-253470CE83BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28A4B2EB-2EC4-457A-8C3C-253470CE83BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +51,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A7CD34B1-1C10-4AD9-95CA-2DC31D4020BD} = {7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}
 		{28A4B2EB-2EC4-457A-8C3C-253470CE83BD} = {7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}
+		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28} = {7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}
 	EndGlobalSection
 EndGlobal
