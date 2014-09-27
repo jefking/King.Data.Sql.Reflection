@@ -6,9 +6,9 @@
     public class StatementTests
     {
         [Test]
-        public void SelectSchema()
+        public void StoredProcedures()
         {
-            var sql = Statement.SelectSchema;
+            var sql = Statement.StoredProcedures;
             Assert.IsTrue(sql.Contains("[Parameter]"));
             Assert.IsTrue(sql.Contains("[DataType]"));
             Assert.IsTrue(sql.Contains("[Schema]"));
