@@ -61,7 +61,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="DataLoaderTests.cs" />
+    <Compile Include="SchemaLoaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

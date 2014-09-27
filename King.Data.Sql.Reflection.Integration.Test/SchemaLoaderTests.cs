@@ -13,7 +13,7 @@
     using System.Threading.Tasks;
 
     [TestFixture]
-    public class DataLoaderTests
+    public class SchemaLoaderTests
     {
         #region Members
         private readonly string connectionString = ConfigurationManager.AppSettings["database"];
@@ -22,7 +22,7 @@
         [Test]
         public async Task Load()
         {
-            var dl = new DataLoader(connectionString);
+            var dl = new SchemaReader(connectionString);
             var manifest = await dl.Load();
 
             Assert.IsNotNull(manifest);
@@ -36,7 +36,7 @@
         [Test]
         public async Task Schemas()
         {
-            var dl = new DataLoader(connectionString);
+            var dl = new SchemaReader(connectionString);
             var data = await dl.Schemas();
 
             Assert.IsNotNull(data);

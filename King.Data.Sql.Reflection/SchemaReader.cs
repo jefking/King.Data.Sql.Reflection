@@ -12,7 +12,7 @@
     /// <summary>
     /// Data Loader
     /// </summary>
-    public class DataLoader : IDataLoader
+    public class SchemaReader : IDataLoader
     {
         #region Members
         /// <summary>
@@ -36,7 +36,7 @@
         /// Constructor
         /// </summary>
         /// <param name="connectionString">Connection String</param>
-        public DataLoader(string connectionString)
+        public SchemaReader(string connectionString)
             :this(connectionString, new Loader<Schema>())
         {
         }
@@ -46,7 +46,7 @@
         /// </summary>
         /// <param name="connectionString">Connection String</param>
         /// <param name="loader">Loader</param>
-        public DataLoader(string connectionString, ILoader<Schema> loader)
+        public SchemaReader(string connectionString, ILoader<Schema> loader)
         {
             if (string.IsNullOrWhiteSpace(connectionString))
             {

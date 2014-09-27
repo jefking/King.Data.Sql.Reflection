@@ -10,19 +10,19 @@
     using King.Data.Sql.Reflection.Models;
 
     [TestFixture]
-    public class DataLoaderTests
+    public class SchemaLoader
     {
         [Test]
         public void Constructor()
         {
-            new DataLoader(Guid.NewGuid().ToString());
+            new SchemaReader(Guid.NewGuid().ToString());
         }
 
         [Test]
         public void ConstructorWithLoader()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            new DataLoader(Guid.NewGuid().ToString(), loader);
+            new SchemaReader(Guid.NewGuid().ToString(), loader);
         }
 
         [Test]
@@ -30,14 +30,14 @@
         public void ConstructorConnectionStringNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            new DataLoader(null, loader);
+            new SchemaReader(null, loader);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorLoaderNull()
         {
-            new DataLoader(Guid.NewGuid().ToString(), null);
+            new SchemaReader(Guid.NewGuid().ToString(), null);
         }
 
         [Test]
@@ -45,7 +45,7 @@
         public void BuildManifestDefinitionsNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
             dl.BuildManifest(null, new List<Schema>());
         }
 
@@ -54,7 +54,7 @@
         public void BuildManifestSchemaNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
             dl.BuildManifest(new List<Definition>(), null);
         }
 
@@ -96,7 +96,7 @@
             }
 
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
             var manifest = dl.BuildManifest(defs, schemas);
             Assert.IsNotNull(manifest);
             Assert.AreEqual(count + 1, manifest.Count);
@@ -108,7 +108,7 @@
         public void BuildManifestEmtpy()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
             var returned = dl.BuildManifest(new List<Definition>(), new List<Schema>());
             Assert.IsNotNull(returned);
             Assert.AreEqual(0, returned.Count());
@@ -119,7 +119,7 @@
         public void MinimizeSchemaNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
             dl.Minimize(null);
         }
 
@@ -136,7 +136,7 @@
             schemas.AddRange(new[] { schema, schema, schema, schema });
 
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
             var returned = dl.Minimize(schemas);
 
             Assert.IsNotNull(returned);
