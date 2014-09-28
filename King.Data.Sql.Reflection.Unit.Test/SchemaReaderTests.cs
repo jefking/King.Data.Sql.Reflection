@@ -22,7 +22,8 @@
         public void ConstructorWithLoader()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            new SchemaReader(Guid.NewGuid().ToString(), loader);
+            var statements = Substitute.For<IStatements>();
+            new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
         }
 
         [Test]
@@ -30,14 +31,24 @@
         public void ConstructorConnectionStringNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            new SchemaReader(null, loader);
+            var statements = Substitute.For<IStatements>();
+            new SchemaReader(null, loader, statements);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorLoaderNull()
         {
-            new SchemaReader(Guid.NewGuid().ToString(), null);
+            var statements = Substitute.For<IStatements>();
+            new SchemaReader(Guid.NewGuid().ToString(), null, statements);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ConstructorStatementsNull()
+        {
+            var loader = Substitute.For<ILoader<Schema>>();
+            new SchemaReader(Guid.NewGuid().ToString(), loader, null);
         }
 
         [Test]
@@ -45,7 +56,8 @@
         public void BuildManifestDefinitionsNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
+            var statements = Substitute.For<IStatements>();
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
             dl.BuildManifest(null, new List<Schema>());
         }
 
@@ -54,7 +66,8 @@
         public void BuildManifestSchemaNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
+            var statements = Substitute.For<IStatements>();
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
             dl.BuildManifest(new List<Definition>(), null);
         }
 
@@ -96,7 +109,8 @@
             }
 
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
+            var statements = Substitute.For<IStatements>();
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
             var manifest = dl.BuildManifest(defs, schemas);
             Assert.IsNotNull(manifest);
             Assert.AreEqual(count + 1, manifest.Count);
@@ -108,7 +122,8 @@
         public void BuildManifestEmtpy()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
+            var statements = Substitute.For<IStatements>();
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
             var returned = dl.BuildManifest(new List<Definition>(), new List<Schema>());
             Assert.IsNotNull(returned);
             Assert.AreEqual(0, returned.Count());
@@ -119,7 +134,8 @@
         public void MinimizeSchemaNull()
         {
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
+            var statements = Substitute.For<IStatements>();
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
             dl.Minimize(null);
         }
 
@@ -136,7 +152,8 @@
             schemas.AddRange(new[] { schema, schema, schema, schema });
 
             var loader = Substitute.For<ILoader<Schema>>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader);
+            var statements = Substitute.For<IStatements>();
+            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
             var returned = dl.Minimize(schemas);
 
             Assert.IsNotNull(returned);

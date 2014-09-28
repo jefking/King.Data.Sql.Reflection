@@ -1,4 +1,4 @@
-PRE-APLHA
+BETA Release
 ===========
 
 ## NuGet

@@ -18,17 +18,22 @@
         /// <summary>
         /// Connection String
         /// </summary>
-        private readonly string connectionString = null;
+        protected readonly string connectionString = null;
 
         /// <summary>
         /// Data Loader
         /// </summary>
-        private readonly ILoader<Schema> loader = null;
+        protected readonly ILoader<Schema> loader = null;
 
         /// <summary>
         /// Definition Comparer
         /// </summary>
-        private static readonly EqualityComparer<IDefinition> comparer = new DefinitionComparer();
+        protected static readonly EqualityComparer<IDefinition> comparer = new DefinitionComparer();
+
+        /// <summary>
+        /// Sql Statements
+        /// </summary>
+        protected readonly IStatements statements = null;
         #endregion
 
         #region Constructors
@@ -37,7 +42,7 @@
         /// </summary>
         /// <param name="connectionString">Connection String</param>
         public SchemaReader(string connectionString)
-            :this(connectionString, new Loader<Schema>())
+            :this(connectionString, new Loader<Schema>(), new Statements())
         {
         }
 
@@ -46,7 +51,7 @@
         /// </summary>
         /// <param name="connectionString">Connection String</param>
         /// <param name="loader">Loader</param>
-        public SchemaReader(string connectionString, ILoader<Schema> loader)
+        public SchemaReader(string connectionString, ILoader<Schema> loader, IStatements statements)
         {
             if (string.IsNullOrWhiteSpace(connectionString))
             {
@@ -56,9 +61,14 @@
             {
                 throw new ArgumentNullException("loader");
             }
+            if (null == statements)
+            {
+                throw new ArgumentNullException("statements");
+            }
 
             this.connectionString = connectionString;
             this.loader = loader;
+            this.statements = statements;
         }
         #endregion
 

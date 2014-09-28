@@ -1,5 +1,8 @@
 ﻿namespace King.Data.Sql.Reflection
 {
+    /// <summary>
+    /// Schema Types
+    /// </summary>
     public enum SchemaTypes
     {
         Unknown = 0,
