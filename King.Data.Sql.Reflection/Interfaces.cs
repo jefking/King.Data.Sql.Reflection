@@ -4,18 +4,18 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    #region IDataLoader
+    #region ISchemaReader
     /// <summary>
     /// Data Loader
     /// </summary>
-    public interface IDataLoader
+    public interface ISchemaReader
     {
         #region Methods
         /// <summary>
         /// Load Manifest (From Data Store)
         /// </summary>
         /// <returns>Manifest</returns>
-        Task<IDictionary<int, IDefinition>> Load();
+        Task<IDictionary<int, IDefinition>> Load(SchemaTypes type = SchemaTypes.StoredProcedure);
         #endregion
     }
     #endregion

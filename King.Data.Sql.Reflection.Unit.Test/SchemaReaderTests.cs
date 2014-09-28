@@ -1,13 +1,13 @@
 ﻿namespace King.Data.Sql.Reflection.Unit.Test
 {
+    using King.Data.Sql.Reflection.Models;
     using King.Mapper;
     using King.Mapper.Data;
-    using NUnit.Framework;
     using NSubstitute;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using King.Data.Sql.Reflection.Models;
 
     [TestFixture]
     public class SchemaReaderTests

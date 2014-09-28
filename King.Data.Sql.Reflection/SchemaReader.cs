@@ -12,7 +12,7 @@
     /// <summary>
     /// Schema Reader
     /// </summary>
-    public class SchemaReader : IDataLoader
+    public class SchemaReader : ISchemaReader
     {
         #region Members
         /// <summary>
@@ -77,9 +77,9 @@
         /// Load data from Database, and return the models.
         /// </summary>
         /// <returns>Schemas to process</returns>
-        public virtual async Task<IDictionary<int, IDefinition>> Load()
+        public virtual async Task<IDictionary<int, IDefinition>> Load(SchemaTypes type = SchemaTypes.StoredProcedure)
         {
-            var schemas = await this.Schemas();
+            var schemas = await this.Schemas(type);
 
             var definitions = this.Minimize(schemas);
 
@@ -90,11 +90,12 @@
         /// Load Schemas from data source
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<IEnumerable<ISchema>> Schemas()
+        public virtual async Task<IEnumerable<ISchema>> Schemas(SchemaTypes type = SchemaTypes.StoredProcedure)
         {
+            var sql = this.statements.Get(type);
             IEnumerable<ISchema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
-            using (var command = new SqlCommand(Statements.StoredProcedures, connection))
+            using (var command = new SqlCommand(sql, connection))
             {
                 await connection.OpenAsync();
 
