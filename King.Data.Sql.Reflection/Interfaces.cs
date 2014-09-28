@@ -22,16 +22,16 @@
 
     #region IStatements
     /// <summary>
-    /// 
+    /// SQL Statements Interface
     /// </summary>
     public interface IStatements
     {
         #region Methods
         /// <summary>
-        /// 
+        /// Get SQL Schema Statement
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">Schema Type</param>
+        /// <returns>Schema Select Statement</returns>
         string Get(SchemaTypes type = SchemaTypes.StoredProcedure);
         #endregion
     }

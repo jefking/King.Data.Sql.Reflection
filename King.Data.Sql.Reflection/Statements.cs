@@ -38,6 +38,11 @@
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Get SQL Schema Statement
+        /// </summary>
+        /// <param name="type">Schema Type</param>
+        /// <returns>Schema Select Statement</returns>
         public virtual string Get(SchemaTypes type = SchemaTypes.StoredProcedure)
         {
             switch (type)
