@@ -1,0 +1,20 @@
+﻿CREATE TABLE [dbo].[LotsOStuff]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+	, TestInt int DEFAULT(NULL)
+	, TestBigInt bigint DEFAULT(NULL)
+	, TestBit bit DEFAULT(NULL)
+	, TestDecimal decimal(16,16) DEFAULT(NULL)
+	, TestMoney money DEFAULT(NULL)
+	, TestFloat float DEFAULT(NULL)
+	, TestDate date DEFAULT(NULL)
+	, TestDateTime2 datetime2 DEFAULT(NULL)
+	, TestDateTime datetime DEFAULT(NULL)
+	, TestChar char DEFAULT(NULL)
+	, TestText text DEFAULT(NULL)
+	, TestNChar nchar DEFAULT(NULL)
+	, TestNText ntext DEFAULT(NULL)
+	, TestBinary binary(64) DEFAULT(NULL)
+	, TestImage image DEFAULT(NULL)
+	, TestGuid uniqueidentifier DEFAULT(NULL)
+)

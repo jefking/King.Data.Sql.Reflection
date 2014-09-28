@@ -59,8 +59,10 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Sprocs" />
+    <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Sprocs\ManyTypes.sql" />
+    <Build Include="dbo\Tables\LotsOStuff.sql" />
   </ItemGroup>
 </Project>
