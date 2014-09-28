@@ -19,6 +19,12 @@
         }
 
         [Test]
+        public void IsISchemaReader()
+        {
+            Assert.IsNotNull(new SchemaReader(Guid.NewGuid().ToString()) as ISchemaReader);
+        }
+
+        [Test]
         public void ConstructorWithLoader()
         {
             var loader = Substitute.For<ILoader<Schema>>();
