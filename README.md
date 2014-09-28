@@ -10,11 +10,11 @@ PM> Install-Package King.Data.Sql.Reflection
 ## Get Started
 ### Stored Procedures
 ```
-var schemaReader = new SchemaReader("Server=localhost;Database=DataBase;Trusted_Connection=True;");
-var schema = await schemaReader.Load();
+var reader = new SchemaReader("Server=localhost;Database=DataBase;Trusted_Connection=True;");
+var schema = await reader.Load();
 ```
 ### Tables
 ```
-var schemaReader = new SchemaReader("Server=localhost;Database=DataBase;Trusted_Connection=True;");
-var schema = await schemaReader.Load(SchemaTypes.Tables);
+var reader = new SchemaReader("Server=localhost;Database=DataBase;Trusted_Connection=True;");
+var schema = await reader.Load(SchemaTypes.Tables);
 ```
