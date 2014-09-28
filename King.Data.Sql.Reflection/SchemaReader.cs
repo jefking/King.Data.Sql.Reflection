@@ -89,10 +89,11 @@
         /// <summary>
         /// Load Schemas from data source
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Schemas</returns>
         public virtual async Task<IEnumerable<ISchema>> Schemas(SchemaTypes type = SchemaTypes.StoredProcedure)
         {
             var sql = this.statements.Get(type);
+
             IEnumerable<ISchema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand(sql, connection))
