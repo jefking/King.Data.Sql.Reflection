@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>King.Data.Sql.Reflection</id>
-    <version>0.0.3</version>
+    <version>1.0.0</version>
     <title>King.Data.Sql.Reflection</title>
     <authors>Jef King</authors>
     <owners>Jef King</owners>
@@ -12,10 +12,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>SQL Server Schema Reflection, turn your SQL Server Schema into data</description>
     <summary>SQL Server Schema Reflection</summary>
-    <releaseNotes>BETA Release; supports Tables and Stored Procedure Schemas</releaseNotes>
+    <releaseNotes>Supports Reflection of Table and Stored Procedure Schemas</releaseNotes>
     <copyright>Jef King</copyright>
     <language>en-US</language>
-    <tags>King.Data.Sql.Reflection SQL SQL-Server Reflection Schema</tags>
+    <tags>King.Data.Sql.Reflection SQL SQL-Server Reflection Schema King.Mapper</tags>
     <dependencies>
       <dependency id="King.Mapper" />
     </dependencies>
