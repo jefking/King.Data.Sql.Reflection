@@ -9,10 +9,10 @@
         /// <summary>
         /// SQL Stored Procedures Statement
         /// </summary>
-        public const string StoredProcedures = @"SELECT parm.name AS [Parameter]
-                                                , typ.name AS [DataType]
+        public const string StoredProcedures = @"SELECT [parm].[name] AS [Parameter]
+                                                , [typ].[name] AS [DataType]
                                                 , SPECIFIC_SCHEMA AS [Schema]
-                                                , SPECIFIC_NAME AS [StoredProcedure]
+                                                , SPECIFIC_NAME AS [Name]
                                                 , CASE parm.max_length WHEN -1 THEN 2147483647 ELSE parm.max_length END AS [MaxLength]
                                             FROM sys.procedures sp WITH(NOLOCK) LEFT OUTER JOIN sys.parameters parm WITH(NOLOCK) ON sp.object_id = parm.object_id
                                             INNER JOIN [information_schema].[routines] WITH(NOLOCK) ON routine_type = 'PROCEDURE'
@@ -26,12 +26,13 @@
         /// <summary>
         /// SQL Table Statement
         /// </summary>
-        public const string Tables = @" SELECT [schema].[COLUMN_NAME] AS [Parameter]
+        public const string Tables = @"SELECT [schema].[COLUMN_NAME] AS [Parameter]
                                             , [schema].DATA_TYPE AS [DataType]
                                             , [schema].[TABLE_SCHEMA] AS [Schema]
-                                            , [schema].[TABLE_NAME] AS [StoredProcedure]
+                                            , [schema].[TABLE_NAME] AS [Name]
                                             , CASE [schema].[CHARACTER_MAXIMUM_LENGTH] WHEN -1 THEN 2147483647 ELSE [schema].[CHARACTER_MAXIMUM_LENGTH] END AS [MaxLength]
-	                                    FROM INFORMATION_SCHEMA.COLUMNS [schema] WITH(NOLOCK)";
+	                                    FROM [information_schema].COLUMNS [schema] WITH(NOLOCK)
+                                        ORDER BY [schema].[TABLE_NAME], [schema].[TABLE_SCHEMA]";
         #endregion
     }
 }

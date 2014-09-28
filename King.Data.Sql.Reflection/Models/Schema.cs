@@ -1,8 +1,6 @@
 ﻿namespace King.Data.Sql.Reflection.Models
 {
     using King.Mapper;
-    using King.Mapper.Data;
-    using System;
 
     /// <summary>
     /// Schema
@@ -41,7 +39,6 @@
         /// <summary>
         /// Name
         /// </summary>
-        [ActionName("StoredProcedure")]
         public virtual string Name
         {
             get;

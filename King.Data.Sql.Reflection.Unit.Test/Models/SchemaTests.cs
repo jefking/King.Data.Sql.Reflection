@@ -49,21 +49,6 @@
         }
 
         [Test]
-        public void NameAction()
-        {
-            var item = new Schema();
-            var property = (from p in item.GetType().GetProperties()
-                            where p.Name == "Name"
-                            select p).FirstOrDefault();
-
-            Assert.IsNotNull(property);
-            var action = property.GetAttribute<ActionNameAttribute>();
-            Assert.IsNotNull(action);
-            Assert.AreEqual("StoredProcedure", action.Name);
-            Assert.AreEqual(ActionFlags.Load, action.Action);
-        }
-
-        [Test]
         public void PrefaceAction()
         {
             var item = new Schema();
