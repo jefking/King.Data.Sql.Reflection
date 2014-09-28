@@ -1,14 +1,8 @@
 ﻿namespace King.Data.Sql.Reflection.Integration.Test
 {
     using King.Data.Sql.Reflection.Models;
-    using King.Mapper;
-    using King.Mapper.Data;
-    using NSubstitute;
     using NUnit.Framework;
-    using System;
-    using System.Collections.Generic;
     using System.Configuration;
-    using System.Data.SqlClient;
     using System.Linq;
     using System.Threading.Tasks;
 

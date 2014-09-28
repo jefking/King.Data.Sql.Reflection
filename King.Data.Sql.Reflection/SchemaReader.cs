@@ -84,11 +84,11 @@
         {
             IEnumerable<ISchema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
-            using (var execute = new SqlCommand(Statements.StoredProcedures, connection))
+            using (var command = new SqlCommand(Statements.StoredProcedures, connection))
             {
                 await connection.OpenAsync();
 
-                schemas = loader.Models(execute);
+                schemas = this.loader.Models(command);
             }
 
             return schemas;
