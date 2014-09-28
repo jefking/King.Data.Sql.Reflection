@@ -110,8 +110,10 @@
 
             var loader = Substitute.For<ILoader<Schema>>();
             var statements = Substitute.For<IStatements>();
+
             var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
             var manifest = dl.BuildManifest(defs, schemas);
+
             Assert.IsNotNull(manifest);
             Assert.AreEqual(count + 1, manifest.Count);
             var c = new DefinitionComparer();
