@@ -45,6 +45,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums.cs" />
     <Compile Include="SchemaReader.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="Models\Definition.cs" />

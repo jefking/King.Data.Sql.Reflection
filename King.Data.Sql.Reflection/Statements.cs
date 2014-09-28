@@ -1,9 +1,11 @@
 ﻿namespace King.Data.Sql.Reflection
 {
+    using System;
+
     /// <summary>
     /// SQL Statements
     /// </summary>
-    public struct Statements
+    public class Statements : IStatements
     {
         #region Members
         /// <summary>
@@ -33,6 +35,21 @@
                                             , CASE [schema].[CHARACTER_MAXIMUM_LENGTH] WHEN -1 THEN 2147483647 ELSE [schema].[CHARACTER_MAXIMUM_LENGTH] END AS [MaxLength]
 	                                    FROM [information_schema].COLUMNS [schema] WITH(NOLOCK)
                                         ORDER BY [schema].[TABLE_NAME], [schema].[TABLE_SCHEMA]";
+        #endregion
+
+        #region Methods
+        public virtual string Get(SchemaTypes type = SchemaTypes.StoredProcedure)
+        {
+            switch (type)
+            {
+                case SchemaTypes.StoredProcedure:
+                    return StoredProcedures;
+                case SchemaTypes.Table:
+                    return Tables;
+                default:
+                    throw new ArgumentException("Unknown schema type.");
+            }
+        }
         #endregion
     }
 }

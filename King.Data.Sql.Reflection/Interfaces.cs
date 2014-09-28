@@ -19,4 +19,21 @@
         #endregion
     }
     #endregion
+
+    #region IStatements
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IStatements
+    {
+        #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        string Get(SchemaTypes type = SchemaTypes.StoredProcedure);
+        #endregion
+    }
+    #endregion
 }
