@@ -3,7 +3,7 @@
     /// <summary>
     /// SQL Statements
     /// </summary>
-    public struct Statement
+    public struct Statements
     {
         #region Members
         /// <summary>
@@ -22,6 +22,16 @@
 	                                            AND typ.name <> 'sysname'
 	                                            AND typ.is_user_defined = 0
                                             ORDER BY SPECIFIC_NAME, SPECIFIC_SCHEMA";
+
+        /// <summary>
+        /// SQL Table Statement
+        /// </summary>
+        public const string Tables = @" SELECT [schema].[COLUMN_NAME] AS [Parameter]
+                                            , [schema].DATA_TYPE AS [DataType]
+                                            , [schema].[TABLE_SCHEMA] AS [Schema]
+                                            , [schema].[TABLE_NAME] AS [StoredProcedure]
+                                            , CASE [schema].[CHARACTER_MAXIMUM_LENGTH] WHEN -1 THEN 2147483647 ELSE [schema].[CHARACTER_MAXIMUM_LENGTH] END AS [MaxLength]
+	                                    FROM INFORMATION_SCHEMA.COLUMNS [schema] WITH(NOLOCK)";
         #endregion
     }
 }
