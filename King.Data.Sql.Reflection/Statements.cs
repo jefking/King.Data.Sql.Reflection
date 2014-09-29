@@ -13,7 +13,7 @@
         /// </summary>
         public const string StoredProcedures = @"SELECT [parm].[name] AS [Parameter]
                                                 , [typ].[name] AS [DataType]
-                                                , SPECIFIC_SCHEMA AS [Schema]
+                                                , SPECIFIC_SCHEMA AS [Preface]
                                                 , SPECIFIC_NAME AS [Name]
                                                 , CASE parm.max_length WHEN -1 THEN 2147483647 ELSE parm.max_length END AS [MaxLength]
                                             FROM sys.procedures sp WITH(NOLOCK) LEFT OUTER JOIN sys.parameters parm WITH(NOLOCK) ON sp.object_id = parm.object_id
@@ -29,16 +29,16 @@
         /// SQL Table Statement
         /// </summary>
         public const string Tables = @"SELECT [schema].[COLUMN_NAME] AS [Parameter]
-                                            , [schema].DATA_TYPE AS [DataType]
-                                            , [schema].[TABLE_SCHEMA] AS [Schema]
+                                            , [schema].[DATA_TYPE] AS [DataType]
+                                            , [schema].[TABLE_SCHEMA] AS [Preface]
                                             , [schema].[TABLE_NAME] AS [Name]
                                             , CASE [schema].[CHARACTER_MAXIMUM_LENGTH] WHEN -1 THEN 2147483647 ELSE [schema].[CHARACTER_MAXIMUM_LENGTH] END AS [MaxLength]
                                             , (SELECT 1
 	                                            FROM [INFORMATION_SCHEMA].KEY_COLUMN_USAGE [key] WITH(NOLOCK)
-	                                            WHERE [schema].TABLE_NAME = [key].TABLE_NAME
-		                                            AND [schema].COLUMN_NAME = [key].COLUMN_NAME
-		                                            AND [schema].TABLE_SCHEMA = [key].TABLE_SCHEMA) AS [IsPrimaryKey]
-	                                    FROM [information_schema].COLUMNS [schema] WITH(NOLOCK)
+	                                            WHERE [schema].[TABLE_NAME] = [key].[TABLE_NAME]
+		                                            AND [schema].[COLUMN_NAME] = [key].[COLUMN_NAME]
+		                                            AND [schema].[TABLE_SCHEMA] = [key].[TABLE_SCHEMA]) AS [IsPrimaryKey]
+	                                    FROM [information_schema].[COLUMNS] [schema] WITH(NOLOCK)
                                         ORDER BY [schema].[TABLE_NAME], [schema].[TABLE_SCHEMA]";
         #endregion
 

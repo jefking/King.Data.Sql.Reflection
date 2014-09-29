@@ -29,7 +29,6 @@
         /// <summary>
         /// Preface
         /// </summary>
-        [ActionName("Schema")]
         public virtual string Preface
         {
             get;
