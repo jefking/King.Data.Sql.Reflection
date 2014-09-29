@@ -10,7 +10,7 @@
         public void StoredProcedures()
         {
             var sql = Statements.StoredProcedures;
-            Assert.IsTrue(sql.Contains("[Parameter]"));
+            Assert.IsTrue(sql.Contains("[ParameterName]"));
             Assert.IsTrue(sql.Contains("[DataType]"));
             Assert.IsTrue(sql.Contains("[Preface]"));
             Assert.IsTrue(sql.Contains("[Name]"));
@@ -29,7 +29,7 @@
         public void Tables()
         {
             var sql = Statements.Tables;
-            Assert.IsTrue(sql.Contains("[Parameter]"));
+            Assert.IsTrue(sql.Contains("[ParameterName]"));
             Assert.IsTrue(sql.Contains("[DataType]"));
             Assert.IsTrue(sql.Contains("[Preface]"));
             Assert.IsTrue(sql.Contains("[Name]"));

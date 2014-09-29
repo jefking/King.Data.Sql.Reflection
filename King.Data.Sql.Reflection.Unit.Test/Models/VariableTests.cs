@@ -50,21 +50,6 @@
         }
 
         [Test]
-        public void ParameterNameAction()
-        {
-            var item = new Variable();
-            var property = (from p in item.GetType().GetProperties()
-                            where p.Name == "ParameterName"
-                            select p).FirstOrDefault();
-
-            Assert.IsNotNull(property);
-            var action = property.GetAttribute<ActionNameAttribute>();
-            Assert.IsNotNull(action);
-            Assert.AreEqual("Parameter", action.Name);
-            Assert.AreEqual(ActionFlags.Load, action.Action);
-        }
-
-        [Test]
         public void MaxLength()
         {
             var random = new Random();

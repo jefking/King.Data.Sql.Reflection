@@ -20,7 +20,6 @@
             var manifest = await dl.Load();
 
             Assert.IsNotNull(manifest);
-            var c = new DefinitionComparer();
             Assert.AreEqual(1, manifest.Values.Count());
             var manyTypes = manifest.Values.FirstOrDefault();
             Assert.IsNotNull(manyTypes);
@@ -34,7 +33,6 @@
             var manifest = await dl.Load(SchemaTypes.StoredProcedure);
 
             Assert.IsNotNull(manifest);
-            var c = new DefinitionComparer();
             Assert.AreEqual(1, manifest.Values.Count());
             var manyTypes = manifest.Values.FirstOrDefault();
             Assert.IsNotNull(manyTypes);
@@ -48,7 +46,6 @@
             var manifest = await dl.Load(SchemaTypes.Table);
 
             Assert.IsNotNull(manifest);
-            var c = new DefinitionComparer();
             Assert.AreEqual(1, manifest.Values.Count());
             var manyTypes = manifest.Values.FirstOrDefault();
             Assert.IsNotNull(manyTypes);
