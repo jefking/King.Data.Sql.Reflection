@@ -9,9 +9,9 @@
     {
         #region Properties
         /// <summary>
-        /// Parameter
+        /// Parameter Name
         /// </summary>
-        public virtual string Parameter
+        public virtual string ParameterName
         {
             get;
             set;

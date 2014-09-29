@@ -144,7 +144,7 @@
                 d.Variables = from s in schemas
                               where s.Name == d.Name
                                   && s.Preface == d.Preface
-                                  && !string.IsNullOrWhiteSpace(s.Parameter)
+                                  && !string.IsNullOrWhiteSpace(s.ParameterName)
                                   && !string.IsNullOrWhiteSpace(s.DataType)
                               select s.Map<Variable>();
 

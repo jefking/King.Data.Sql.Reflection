@@ -22,12 +22,12 @@
         }
 
         [Test]
-        public void Parameter()
+        public void ParameterName()
         {
             var item = new Schema();
             var data = Guid.NewGuid().ToString();
-            item.Parameter = data;
-            Assert.AreEqual(data, item.Parameter);
+            item.ParameterName = data;
+            Assert.AreEqual(data, item.ParameterName);
         }
 
         [Test]

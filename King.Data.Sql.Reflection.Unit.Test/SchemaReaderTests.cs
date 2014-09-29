@@ -99,7 +99,7 @@
                     Name = schema.Name,
                     Preface = schema.Preface,
                     DataType = Guid.NewGuid().ToString(),
-                    Parameter = Guid.NewGuid().ToString(),
+                    ParameterName = Guid.NewGuid().ToString(),
                 };
                 schemas.Add(s);
             }

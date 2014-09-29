@@ -45,7 +45,7 @@
         /// <summary>
         /// Parameter
         /// </summary>
-        string Parameter
+        string ParameterName
         {
             get;
         }
