@@ -33,6 +33,11 @@
                                             , [schema].[TABLE_SCHEMA] AS [Schema]
                                             , [schema].[TABLE_NAME] AS [Name]
                                             , CASE [schema].[CHARACTER_MAXIMUM_LENGTH] WHEN -1 THEN 2147483647 ELSE [schema].[CHARACTER_MAXIMUM_LENGTH] END AS [MaxLength]
+                                            , (SELECT 1
+	                                            FROM [INFORMATION_SCHEMA].KEY_COLUMN_USAGE [key] WITH(NOLOCK)
+	                                            WHERE [schema].TABLE_NAME = [key].TABLE_NAME
+		                                            AND [schema].COLUMN_NAME = [key].COLUMN_NAME
+		                                            AND [schema].TABLE_SCHEMA = [key].TABLE_SCHEMA) AS [IsPrimaryKey]
 	                                    FROM [information_schema].COLUMNS [schema] WITH(NOLOCK)
                                         ORDER BY [schema].[TABLE_NAME], [schema].[TABLE_SCHEMA]";
         #endregion
