@@ -16,7 +16,8 @@
                                                 , SPECIFIC_SCHEMA AS [Preface]
                                                 , SPECIFIC_NAME AS [Name]
                                                 , CASE parm.max_length WHEN -1 THEN 2147483647 ELSE parm.max_length END AS [MaxLength]
-                                            FROM sys.procedures sp WITH(NOLOCK) LEFT OUTER JOIN sys.parameters parm WITH(NOLOCK) ON sp.object_id = parm.object_id
+                                            FROM sys.procedures sp WITH(NOLOCK)
+                                            LEFT OUTER JOIN sys.parameters parm WITH(NOLOCK) ON sp.object_id = parm.object_id
                                             INNER JOIN [information_schema].[routines] WITH(NOLOCK) ON routine_type = 'PROCEDURE'
 	                                                AND ROUTINE_NAME not like 'sp_%diagram%'
 	                                                AND sp.name = SPECIFIC_NAME
