@@ -40,6 +40,15 @@
         }
 
         [Test]
+        public void IsPrimaryKey()
+        {
+            var item = new Schema();
+            Assert.IsFalse(item.IsPrimaryKey);
+            item.IsPrimaryKey = true;
+            Assert.IsTrue(item.IsPrimaryKey);
+        }
+
+        [Test]
         public void Name()
         {
             var item = new Schema();

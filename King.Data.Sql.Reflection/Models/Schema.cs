@@ -52,6 +52,15 @@
             get;
             set;
         }
+
+        /// <summary>
+        /// Is Primary Key
+        /// </summary>
+        public virtual bool IsPrimaryKey
+        {
+            get;
+            set;
+        }
         #endregion
     }
 }

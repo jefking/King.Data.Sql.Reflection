@@ -47,9 +47,14 @@
 
             Assert.IsNotNull(manifest);
             Assert.AreEqual(1, manifest.Values.Count());
-            var manyTypes = manifest.Values.FirstOrDefault();
-            Assert.IsNotNull(manyTypes);
-            Assert.AreEqual(17, manyTypes.Variables.Count());
+            var lotsOStuff = manifest.Values.FirstOrDefault();
+            Assert.IsNotNull(lotsOStuff);
+            Assert.AreEqual(17, lotsOStuff.Variables.Count());
+            var key = (from v in lotsOStuff.Variables
+                       where v.IsPrimaryKey
+                       select v).FirstOrDefault();
+            Assert.IsNotNull(key);
+            Assert.AreEqual("Id", key.ParameterName);
         }
 
         [Test]

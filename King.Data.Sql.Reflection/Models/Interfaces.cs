@@ -81,6 +81,14 @@
         {
             get;
         }
+
+        /// <summary>
+        /// Is Primary Key
+        /// </summary>
+        bool IsPrimaryKey
+        {
+            get;
+        }
         #endregion
     }
 
