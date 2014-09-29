@@ -20,7 +20,6 @@
         /// <summary>
         /// Parameter Name
         /// </summary>
-        [ActionName("Parameter")]
         public virtual string ParameterName
         {
             get;
@@ -31,6 +30,15 @@
         /// Maximum Length
         /// </summary>
         public virtual int MaxLength
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Is Primary Key
+        /// </summary>
+        public virtual bool IsPrimaryKey
         {
             get;
             set;

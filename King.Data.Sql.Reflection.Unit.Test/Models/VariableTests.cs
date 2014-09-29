@@ -32,6 +32,15 @@
         }
 
         [Test]
+        public void IsPrimaryKey()
+        {
+            var item = new Variable();
+            Assert.IsFalse(item.IsPrimaryKey);
+            item.IsPrimaryKey = true;
+            Assert.IsTrue(item.IsPrimaryKey);
+        }
+
+        [Test]
         public void ParameterName()
         {
             var item = new Variable();

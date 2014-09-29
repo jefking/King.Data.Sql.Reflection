@@ -11,7 +11,7 @@
         /// <summary>
         /// SQL Stored Procedures Statement
         /// </summary>
-        public const string StoredProcedures = @"SELECT [parm].[name] AS [Parameter]
+        public const string StoredProcedures = @"SELECT [parm].[name] AS [ParameterName]
                                                 , [typ].[name] AS [DataType]
                                                 , SPECIFIC_SCHEMA AS [Preface]
                                                 , SPECIFIC_NAME AS [Name]
@@ -29,7 +29,7 @@
         /// <summary>
         /// SQL Table Statement
         /// </summary>
-        public const string Tables = @"SELECT [schema].[COLUMN_NAME] AS [Parameter]
+        public const string Tables = @"SELECT [schema].[COLUMN_NAME] AS [ParameterName]
                                             , [schema].[DATA_TYPE] AS [DataType]
                                             , [schema].[TABLE_SCHEMA] AS [Preface]
                                             , [schema].[TABLE_NAME] AS [Name]
