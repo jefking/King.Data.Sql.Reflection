@@ -13,9 +13,9 @@
         /// </summary>
         public const string StoredProcedures = @"SELECT [parm].[name] AS [ParameterName]
                                                 , [typ].[name] AS [DataType]
-                                                , SPECIFIC_SCHEMA AS [Preface]
-                                                , SPECIFIC_NAME AS [Name]
-                                                , CASE parm.max_length WHEN -1 THEN 2147483647 ELSE parm.max_length END AS [MaxLength]
+                                                , [SPECIFIC_SCHEMA] AS [Preface]
+                                                , [SPECIFIC_NAME] AS [Name]
+                                                , CASE [parm].[max_length] WHEN -1 THEN 2147483647 ELSE [parm].[max_length] END AS [MaxLength]
                                             FROM sys.procedures sp WITH(NOLOCK)
                                             LEFT OUTER JOIN sys.parameters parm WITH(NOLOCK) ON sp.object_id = parm.object_id
                                             INNER JOIN [information_schema].[routines] WITH(NOLOCK) ON routine_type = 'PROCEDURE'
@@ -34,12 +34,11 @@
                                             , [schema].[TABLE_SCHEMA] AS [Preface]
                                             , [schema].[TABLE_NAME] AS [Name]
                                             , CASE [schema].[CHARACTER_MAXIMUM_LENGTH] WHEN -1 THEN 2147483647 ELSE [schema].[CHARACTER_MAXIMUM_LENGTH] END AS [MaxLength]
-                                            , (SELECT 1
-	                                            FROM [INFORMATION_SCHEMA].KEY_COLUMN_USAGE [key] WITH(NOLOCK)
-	                                            WHERE [schema].[TABLE_NAME] = [key].[TABLE_NAME]
-		                                            AND [schema].[COLUMN_NAME] = [key].[COLUMN_NAME]
-		                                            AND [schema].[TABLE_SCHEMA] = [key].[TABLE_SCHEMA]) AS [IsPrimaryKey]
+                                            , CASE [key].[TABLE_SCHEMA] WHEN [schema].[TABLE_SCHEMA] THEN 1 ELSE 0 END AS [IsPrimaryKey]
 	                                    FROM [information_schema].[COLUMNS] [schema] WITH(NOLOCK)
+											LEFT OUTER JOIN [INFORMATION_SCHEMA].KEY_COLUMN_USAGE [key] WITH(NOLOCK) ON [schema].[TABLE_NAME] = [key].[TABLE_NAME]
+		                                            AND [schema].[COLUMN_NAME] = [key].[COLUMN_NAME]
+		                                            AND [schema].[TABLE_SCHEMA] = [key].[TABLE_SCHEMA]
                                         ORDER BY [schema].[TABLE_NAME], [schema].[TABLE_SCHEMA]";
         #endregion
 
