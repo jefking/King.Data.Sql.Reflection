@@ -121,9 +121,9 @@
             var manifest = dl.BuildManifest(defs, schemas);
 
             Assert.IsNotNull(manifest);
-            Assert.AreEqual(count + 1, manifest.Count);
+            Assert.AreEqual(count + 1, manifest.Count());
             var c = new DefinitionComparer();
-            Assert.AreEqual(schemaCount, manifest[c.GetHashCode(def)].Variables.Count());
+            Assert.AreEqual(schemaCount, manifest.ElementAt(0).Variables.Count());
         }
 
         [Test]

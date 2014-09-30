@@ -15,7 +15,7 @@
         /// Load Manifest (From Data Store)
         /// </summary>
         /// <returns>Manifest</returns>
-        Task<IDictionary<int, IDefinition>> Load(SchemaTypes type = SchemaTypes.StoredProcedure);
+        Task<IEnumerable<IDefinition>> Load(SchemaTypes type = SchemaTypes.StoredProcedure);
         #endregion
     }
     #endregion

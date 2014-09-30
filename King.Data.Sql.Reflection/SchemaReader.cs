@@ -77,7 +77,7 @@
         /// Load data from Database, and return the models.
         /// </summary>
         /// <returns>Schemas to process</returns>
-        public virtual async Task<IDictionary<int, IDefinition>> Load(SchemaTypes type = SchemaTypes.StoredProcedure)
+        public virtual async Task<IEnumerable<IDefinition>> Load(SchemaTypes type = SchemaTypes.StoredProcedure)
         {
             var schemas = await this.Schemas(type);
 
@@ -127,7 +127,7 @@
         /// <param name="definitions">Definitions</param>
         /// <param name="schemas">Schemas</param>
         /// <returns>Manifest</returns>
-        public virtual IDictionary<int, IDefinition> BuildManifest(IEnumerable<IDefinition> definitions, IEnumerable<ISchema> schemas)
+        public virtual IEnumerable<IDefinition> BuildManifest(IEnumerable<IDefinition> definitions, IEnumerable<ISchema> schemas)
         {
             if (null == definitions)
             {
@@ -138,7 +138,7 @@
                 throw new ArgumentNullException("schemas");
             }
 
-            var manifest = new Dictionary<int, IDefinition>();
+            var manifest = new List<IDefinition>();
             foreach (var d in definitions)
             {
                 d.Variables = from s in schemas
@@ -148,7 +148,7 @@
                                   && !string.IsNullOrWhiteSpace(s.DataType)
                               select s.Map<Variable>();
 
-                manifest.Add(comparer.GetHashCode(d), d);
+                manifest.Add(d);
             }
 
             return manifest;

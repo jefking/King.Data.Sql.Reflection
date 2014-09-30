@@ -20,8 +20,8 @@
             var manifest = await dl.Load();
 
             Assert.IsNotNull(manifest);
-            Assert.AreEqual(1, manifest.Values.Count());
-            var manyTypes = manifest.Values.FirstOrDefault();
+            Assert.AreEqual(1, manifest.Count());
+            var manyTypes = manifest.FirstOrDefault();
             Assert.IsNotNull(manyTypes);
             Assert.AreEqual(16, manyTypes.Variables.Count());
         }
@@ -33,8 +33,8 @@
             var manifest = await dl.Load(SchemaTypes.StoredProcedure);
 
             Assert.IsNotNull(manifest);
-            Assert.AreEqual(1, manifest.Values.Count());
-            var manyTypes = manifest.Values.FirstOrDefault();
+            Assert.AreEqual(1, manifest.Count());
+            var manyTypes = manifest.FirstOrDefault();
             Assert.IsNotNull(manyTypes);
             Assert.AreEqual(16, manyTypes.Variables.Count());
         }
@@ -46,8 +46,8 @@
             var manifest = await dl.Load(SchemaTypes.Table);
 
             Assert.IsNotNull(manifest);
-            Assert.AreEqual(1, manifest.Values.Count());
-            var lotsOStuff = manifest.Values.FirstOrDefault();
+            Assert.AreEqual(1, manifest.Count());
+            var lotsOStuff = manifest.FirstOrDefault();
             Assert.IsNotNull(lotsOStuff);
             Assert.AreEqual(17, lotsOStuff.Variables.Count());
             var key = (from v in lotsOStuff.Variables
