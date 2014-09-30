@@ -47,17 +47,41 @@
 
             Assert.IsNotNull(manifest);
             Assert.AreEqual(2, manifest.Count());
-            var lotsOfStuff = (from m in manifest
-                             where m.Preface == "dbo"
-                             && m.Name == "LotsOfStuff"
-                             select m).FirstOrDefault();
-            Assert.IsNotNull(lotsOfStuff);
-            Assert.AreEqual(17, lotsOfStuff.Variables.Count());
-            var key = (from v in lotsOfStuff.Variables
+            var table = (from m in manifest
+                               where m.Preface == "dbo"
+                               && m.Name == "LotsOfStuff"
+                               select m).FirstOrDefault();
+            Assert.IsNotNull(table);
+            Assert.AreEqual(17, table.Variables.Count());
+            var key = (from v in table.Variables
                        where v.IsPrimaryKey
                        select v).FirstOrDefault();
             Assert.IsNotNull(key);
             Assert.AreEqual("Id", key.ParameterName);
+        }
+
+        [Test]
+        public async Task DualPrimaryKeys()
+        {
+            var dl = new SchemaReader(connectionString);
+            var manifest = await dl.Load(SchemaTypes.Table);
+
+            Assert.IsNotNull(manifest);
+            Assert.AreEqual(2, manifest.Count());
+            var table = (from m in manifest
+                         where m.Preface == "dbo"
+                         && m.Name == "DualPrimaryKeys"
+                         select m).FirstOrDefault();
+            Assert.IsNotNull(table);
+            Assert.AreEqual(3, table.Variables.Count());
+            var keys = from v in table.Variables
+                       where v.IsPrimaryKey
+                       select v;
+            Assert.IsNotNull(keys);
+            foreach (var key in keys)
+            {
+                Assert.IsTrue(key.ParameterName == "FirstId" || key.ParameterName == "SecondId");
+            }
         }
 
         [Test]
