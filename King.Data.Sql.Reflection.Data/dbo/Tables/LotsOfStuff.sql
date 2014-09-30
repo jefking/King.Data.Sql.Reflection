@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[LotsOStuff]
+﻿CREATE TABLE [dbo].[LotsOfStuff]
 (
 	[Id] INT NOT NULL PRIMARY KEY
 	, TestInt int DEFAULT(NULL)

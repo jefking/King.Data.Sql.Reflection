@@ -46,11 +46,14 @@
             var manifest = await dl.Load(SchemaTypes.Table);
 
             Assert.IsNotNull(manifest);
-            Assert.AreEqual(1, manifest.Count());
-            var lotsOStuff = manifest.FirstOrDefault();
-            Assert.IsNotNull(lotsOStuff);
-            Assert.AreEqual(21, lotsOStuff.Variables.Count());
-            var key = (from v in lotsOStuff.Variables
+            Assert.AreEqual(2, manifest.Count());
+            var lotsOfStuff = (from m in manifest
+                             where m.Preface == "dbo"
+                             && m.Name == "LotsOfStuff"
+                             select m).FirstOrDefault();
+            Assert.IsNotNull(lotsOfStuff);
+            Assert.AreEqual(20, lotsOfStuff.Variables.Count());
+            var key = (from v in lotsOfStuff.Variables
                        where v.IsPrimaryKey
                        select v).FirstOrDefault();
             Assert.IsNotNull(key);
@@ -84,7 +87,7 @@
             var data = await dl.Schemas(SchemaTypes.Table);
 
             Assert.IsNotNull(data);
-            Assert.AreEqual(21, data.Count());
+            Assert.AreEqual(20, data.Count());
         }
     }
 }

@@ -50,11 +50,11 @@
 
                 var models = loader.Models(cmd);
                 Assert.IsNotNull(models);
-                Assert.AreEqual(21, models.Count());
+                Assert.AreEqual(20, models.Count());
                 foreach (var schema in models)
                 {
                     Assert.AreEqual("dbo", schema.Preface);
-                    Assert.AreEqual("LotsOStuff", schema.Name);
+                    Assert.IsTrue(schema.Name == "LotsOStuff" || schema.Name == "DualPrimaryKeys");
                 }
             }
         }
