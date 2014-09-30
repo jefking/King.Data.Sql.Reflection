@@ -39,6 +39,7 @@
 											LEFT OUTER JOIN [INFORMATION_SCHEMA].KEY_COLUMN_USAGE [key] WITH(NOLOCK) ON [schema].[TABLE_NAME] = [key].[TABLE_NAME]
 		                                            AND [schema].[COLUMN_NAME] = [key].[COLUMN_NAME]
 		                                            AND [schema].[TABLE_SCHEMA] = [key].[TABLE_SCHEMA]
+										WHERE [schema].[TABLE_NAME] <> '__RefactorLog'
                                         ORDER BY [schema].[TABLE_NAME], [schema].[TABLE_SCHEMA]";
         #endregion
 

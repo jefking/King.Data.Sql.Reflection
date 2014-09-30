@@ -49,7 +49,7 @@
             Assert.AreEqual(1, manifest.Count());
             var lotsOStuff = manifest.FirstOrDefault();
             Assert.IsNotNull(lotsOStuff);
-            Assert.AreEqual(17, lotsOStuff.Variables.Count());
+            Assert.AreEqual(21, lotsOStuff.Variables.Count());
             var key = (from v in lotsOStuff.Variables
                        where v.IsPrimaryKey
                        select v).FirstOrDefault();
@@ -84,7 +84,7 @@
             var data = await dl.Schemas(SchemaTypes.Table);
 
             Assert.IsNotNull(data);
-            Assert.AreEqual(17, data.Count());
+            Assert.AreEqual(21, data.Count());
         }
     }
 }

@@ -50,7 +50,7 @@
 
                 var models = loader.Models(cmd);
                 Assert.IsNotNull(models);
-                Assert.AreEqual(17, models.Count());
+                Assert.AreEqual(21, models.Count());
                 foreach (var schema in models)
                 {
                     Assert.AreEqual("dbo", schema.Preface);
