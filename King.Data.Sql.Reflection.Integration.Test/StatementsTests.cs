@@ -54,7 +54,7 @@
                 foreach (var schema in models)
                 {
                     Assert.AreEqual("dbo", schema.Preface);
-                    Assert.IsTrue(schema.Name == "LotsOStuff" || schema.Name == "DualPrimaryKeys");
+                    Assert.IsTrue(schema.Name == "LotsOfStuff" || schema.Name == "DualPrimaryKeys");
                 }
             }
         }

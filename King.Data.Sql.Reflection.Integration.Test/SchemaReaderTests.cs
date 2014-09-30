@@ -52,7 +52,7 @@
                              && m.Name == "LotsOfStuff"
                              select m).FirstOrDefault();
             Assert.IsNotNull(lotsOfStuff);
-            Assert.AreEqual(20, lotsOfStuff.Variables.Count());
+            Assert.AreEqual(17, lotsOfStuff.Variables.Count());
             var key = (from v in lotsOfStuff.Variables
                        where v.IsPrimaryKey
                        select v).FirstOrDefault();
