@@ -1,6 +1,5 @@
 ﻿namespace King.Data.Sql.Reflection.Integration.Test
 {
-    using King.Data.Sql.Reflection.Models;
     using NUnit.Framework;
     using System.Configuration;
     using System.Linq;
