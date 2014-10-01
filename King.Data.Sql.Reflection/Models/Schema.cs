@@ -1,7 +1,5 @@
 ﻿namespace King.Data.Sql.Reflection.Models
 {
-    using King.Mapper;
-
     /// <summary>
     /// Schema
     /// </summary>
