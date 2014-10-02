@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("King.Data.Sql.Reflection")]
-[assembly: AssemblyDescription("SQL Server Schema Relfection")]
+[assembly: AssemblyDescription("SQL Server Schema Relfection.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("King.Data.Sql.Reflection")]
