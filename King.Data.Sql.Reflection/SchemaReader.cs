@@ -16,14 +16,9 @@
     {
         #region Members
         /// <summary>
-        /// Connection String
+        /// Sql Executor
         /// </summary>
-        protected readonly string connectionString = null;
-
-        /// <summary>
-        /// Data Loader
-        /// </summary>
-        protected readonly ILoader<Schema> loader = null;
+        protected readonly IExecutor executor = null;
 
         /// <summary>
         /// Definition Comparer
@@ -42,32 +37,25 @@
         /// </summary>
         /// <param name="connectionString">Connection String</param>
         public SchemaReader(string connectionString)
-            :this(connectionString, new Loader<Schema>(), new Statements())
+            :this(new Executor(new SqlConnection(connectionString)), new Statements())
         {
         }
 
         /// <summary>
         /// Mockable Constructor
         /// </summary>
-        /// <param name="connectionString">Connection String</param>
-        /// <param name="loader">Loader</param>
-        public SchemaReader(string connectionString, ILoader<Schema> loader, IStatements statements)
+        public SchemaReader(IExecutor executor, IStatements statements)
         {
-            if (string.IsNullOrWhiteSpace(connectionString))
+            if (null == executor)
             {
-                throw new ArgumentException("connectionString");
-            }
-            if (null == loader)
-            {
-                throw new ArgumentNullException("loader");
+                throw new ArgumentNullException("executor");
             }
             if (null == statements)
             {
                 throw new ArgumentNullException("statements");
             }
 
-            this.connectionString = connectionString;
-            this.loader = loader;
+            this.executor = executor;
             this.statements = statements;
         }
         #endregion
@@ -94,16 +82,8 @@
         {
             var sql = this.statements.Get(type);
 
-            IEnumerable<ISchema> schemas = null;
-            using (var connection = new SqlConnection(connectionString))
-            using (var command = new SqlCommand(sql, connection))
-            {
-                await connection.OpenAsync();
-
-                schemas = this.loader.Models(command);
-            }
-
-            return schemas;
+            var ds = await this.executor.Query(sql);
+            return ds.Models<Schema>();
         }
 
         /// <summary>

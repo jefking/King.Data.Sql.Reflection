@@ -12,58 +12,43 @@
     [TestFixture]
     public class SchemaReaderTests
     {
+        private const string ConnectionString = "Server=server;Database=database;Trusted_Connection=True;";
+
         [Test]
         public void Constructor()
         {
-            new SchemaReader(Guid.NewGuid().ToString());
+            new SchemaReader(ConnectionString);
         }
 
         [Test]
         public void IsISchemaReader()
         {
-            Assert.IsNotNull(new SchemaReader(Guid.NewGuid().ToString()) as ISchemaReader);
-        }
-
-        [Test]
-        public void ConstructorWithLoader()
-        {
-            var loader = Substitute.For<ILoader<Schema>>();
-            var statements = Substitute.For<IStatements>();
-            new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
-        }
-
-        [Test]
-        [ExpectedException(typeof(ArgumentException))]
-        public void ConstructorConnectionStringNull()
-        {
-            var loader = Substitute.For<ILoader<Schema>>();
-            var statements = Substitute.For<IStatements>();
-            new SchemaReader(null, loader, statements);
+            Assert.IsNotNull(new SchemaReader(ConnectionString) as ISchemaReader);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void ConstructorLoaderNull()
+        public void ConstructorExecutorNull()
         {
             var statements = Substitute.For<IStatements>();
-            new SchemaReader(Guid.NewGuid().ToString(), null, statements);
+            new SchemaReader(null, statements);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorStatementsNull()
         {
-            var loader = Substitute.For<ILoader<Schema>>();
-            new SchemaReader(Guid.NewGuid().ToString(), loader, null);
+            var executor = Substitute.For<IExecutor>();
+            new SchemaReader(executor, null);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void BuildManifestDefinitionsNull()
         {
-            var loader = Substitute.For<ILoader<Schema>>();
+            var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
+            var dl = new SchemaReader(executor, statements);
             dl.BuildManifest(null, new List<Schema>());
         }
 
@@ -71,9 +56,9 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void BuildManifestSchemaNull()
         {
-            var loader = Substitute.For<ILoader<Schema>>();
+            var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
+            var dl = new SchemaReader(executor, statements);
             dl.BuildManifest(new List<Definition>(), null);
         }
 
@@ -114,10 +99,10 @@
                 defs.Add(d);
             }
 
-            var loader = Substitute.For<ILoader<Schema>>();
+            var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
 
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
+            var dl = new SchemaReader(executor, statements);
             var manifest = dl.BuildManifest(defs, schemas);
 
             Assert.IsNotNull(manifest);
@@ -129,9 +114,9 @@
         [Test]
         public void BuildManifestEmtpy()
         {
-            var loader = Substitute.For<ILoader<Schema>>();
+            var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
+            var dl = new SchemaReader(executor, statements);
             var returned = dl.BuildManifest(new List<Definition>(), new List<Schema>());
             Assert.IsNotNull(returned);
             Assert.AreEqual(0, returned.Count());
@@ -141,9 +126,9 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void MinimizeSchemaNull()
         {
-            var loader = Substitute.For<ILoader<Schema>>();
+            var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
+            var dl = new SchemaReader(executor, statements);
             dl.Minimize(null);
         }
 
@@ -159,9 +144,9 @@
 
             schemas.AddRange(new[] { schema, schema, schema, schema });
 
-            var loader = Substitute.For<ILoader<Schema>>();
+            var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
-            var dl = new SchemaReader(Guid.NewGuid().ToString(), loader, statements);
+            var dl = new SchemaReader(executor, statements);
             var returned = dl.Minimize(schemas);
 
             Assert.IsNotNull(returned);
