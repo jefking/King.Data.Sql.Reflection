@@ -10,14 +10,5 @@ Reflect SQL Server Schema
 PM> Install-Package King.Data.Sql.Reflection
 ```
 
-## Get Started
-### Stored Procedures
-```
-var reader = new SchemaReader("Server=localhost;Database=DataBase;Trusted_Connection=True;");
-var schema = await reader.Load();
-```
-### Tables
-```
-var reader = new SchemaReader("Server=localhost;Database=DataBase;Trusted_Connection=True;");
-var schema = await reader.Load(SchemaTypes.Tables);
-```
+### [Wiki](https://github.com/jefking/King.Data.Sql.Reflection/wiki)
+View the wiki to learn how to use this.
