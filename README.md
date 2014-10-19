@@ -5,8 +5,7 @@ Reflect SQL Server Schema
 + Load Stored Procedures, and all parameters
 + Load tables, and all columns and keys
 
-## NuGet
-[Add via NuGet](https://www.nuget.org/packages/King.Data.Sql.Reflection)
+## [NuGet](https://www.nuget.org/packages/King.Data.Sql.Reflection)
 ```
 PM> Install-Package King.Data.Sql.Reflection
 ```
