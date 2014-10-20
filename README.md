@@ -1,6 +1,3 @@
-King.Data.Sql.Reflection
-===========
-
 Reflect SQL Server Schema
 + Load Stored Procedures, and all parameters
 + Load tables, and all columns and keys
