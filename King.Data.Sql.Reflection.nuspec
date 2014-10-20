@@ -10,8 +10,8 @@
     <projectUrl>https://github.com/jefking/King.Data.Sql.Reflection</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/jefking/King.Data.Sql.Reflection/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>SQL Server Schema Reflection, turn your SQL Server Schema into data</description>
-    <summary>SQL Server Schema Reflection</summary>
+    <description>Reflect SQL Server Schema</description>
+    <summary>Reflect SQL Server Schema</summary>
     <releaseNotes>Simplified Data Structures.</releaseNotes>
     <copyright>Jef King</copyright>
     <language>en-US</language>
