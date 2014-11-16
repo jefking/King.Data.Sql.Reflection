@@ -2,6 +2,10 @@
 {
     using System.Collections.Generic;
 
+    #region ISchema
+    /// <summary>
+    /// Variable Interface
+    /// </summary>
     public interface IVariable
     {
         #region Properties
@@ -38,7 +42,12 @@
         }
         #endregion
     }
+    #endregion
 
+    #region ISchema
+    /// <summary>
+    /// Schema Interface
+    /// </summary>
     public interface ISchema
     {
         #region Properties
@@ -91,7 +100,12 @@
         }
         #endregion
     }
+    #endregion
 
+    #region IDefinition
+    /// <summary>
+    /// Definition Interface
+    /// </summary>
     public interface IDefinition
     {
         #region Properties
@@ -121,4 +135,5 @@
         }
         #endregion
     }
+    #endregion
 }
