@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection", "King.Data.Sql.Reflection\King.Data.Sql.Reflection.csproj", "{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}"
 EndProject
@@ -19,6 +19,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.Integration.Test", "King.Data.Sql.Reflection.Integration.Test\King.Data.Sql.Reflection.Integration.Test.csproj", "{28A4B2EB-2EC4-457A-8C3C-253470CE83BD}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "King.Data.Sql.Reflection.Data", "King.Data.Sql.Reflection.Data\King.Data.Sql.Reflection.Data.sqlproj", "{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6CF554B0-EABE-4C94-BFE0-CA9B24CAB353}"
+	ProjectSection(SolutionItems) = preProject
+		King.Data.Sql.Reflection.nuspec = King.Data.Sql.Reflection.nuspec
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
