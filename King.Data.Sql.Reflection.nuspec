@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>King.Data.Sql.Reflection</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>King.Data.Sql.Reflection</title>
     <authors>Jef King</authors>
     <owners>Jef King</owners>
@@ -20,12 +20,12 @@
       <dependency id="King.Mapper" />
     </dependencies>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net451" />
-      <frameworkAssembly assemblyName="System.Data" targetFramework="net451" />
-      <frameworkAssembly assemblyName="System.Xml" targetFramework="net451" />
+      <frameworkAssembly assemblyName="System" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="net45" />
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="King.Data.Sql.Reflection\bin\Release\King.Data.Sql.Reflection.dll" target="lib\net451\King.Data.Sql.Reflection.dll" />
+    <file src="King.Data.Sql.Reflection\bin\Release\King.Data.Sql.Reflection.dll" target="lib\net45\King.Data.Sql.Reflection.dll" />
   </files>
 </package>
