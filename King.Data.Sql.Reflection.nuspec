@@ -20,12 +20,13 @@
       <dependency id="King.Mapper" />
     </dependencies>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net45" />
-      <frameworkAssembly assemblyName="System.Data" targetFramework="net45" />
-      <frameworkAssembly assemblyName="System.Xml" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System" />
+      <frameworkAssembly assemblyName="System.Data" />
+      <frameworkAssembly assemblyName="System.Xml" />
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="King.Data.Sql.Reflection\bin\Release\King.Data.Sql.Reflection.dll" target="lib\net45\King.Data.Sql.Reflection.dll" />
+    <file src="King.Data.Sql.Reflection.45\bin\Release\King.Data.Sql.Reflection.dll" target="lib\net45\King.Data.Sql.Reflection.dll" />
+    <file src="King.Data.Sql.Reflection.46\bin\Release\King.Data.Sql.Reflection.dll" target="lib\net46\King.Data.Sql.Reflection.dll" />
   </files>
 </package>
