@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection", "King.Data.Sql.Reflection\King.Data.Sql.Reflection.csproj", "{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.45", "King.Data.Sql.Reflection.45\King.Data.Sql.Reflection.45.csproj", "{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}"
 EndProject
@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		King.Data.Sql.Reflection.nuspec = King.Data.Sql.Reflection.nuspec
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.46", "King.Data.Sql.Reflection.46\King.Data.Sql.Reflection.46.csproj", "{5D3BC44E-2834-4D1A-949C-708F85F40F35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5D3BC44E-2834-4D1A-949C-708F85F40F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3BC44E-2834-4D1A-949C-708F85F40F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3BC44E-2834-4D1A-949C-708F85F40F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3BC44E-2834-4D1A-949C-708F85F40F35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

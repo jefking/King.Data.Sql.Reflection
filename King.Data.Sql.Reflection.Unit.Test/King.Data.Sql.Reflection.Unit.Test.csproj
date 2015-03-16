@@ -76,9 +76,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\King.Data.Sql.Reflection\King.Data.Sql.Reflection.csproj">
+    <ProjectReference Include="..\King.Data.Sql.Reflection.45\King.Data.Sql.Reflection.45.csproj">
       <Project>{e6e922eb-9c22-4ba4-9fde-d0955426fdfe}</Project>
-      <Name>King.Data.Sql.Reflection</Name>
+      <Name>King.Data.Sql.Reflection.45</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

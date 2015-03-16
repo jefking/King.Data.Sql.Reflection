@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>King.Data.Sql.Reflection</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>King.Data.Sql.Reflection</title>
     <authors>Jef King</authors>
     <owners>Jef King</owners>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Reflect SQL Server Schema</description>
     <summary>Reflect SQL Server Schema</summary>
-    <releaseNotes>Simplified Data Structures.</releaseNotes>
+    <releaseNotes>Support for .NET 4.5 and 4.6.</releaseNotes>
     <copyright>Jef King</copyright>
     <language>en-US</language>
     <tags>King.Data.Sql.Reflection SQL SQL-Server Reflection Schema King.Mapper</tags>
