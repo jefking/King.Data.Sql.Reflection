@@ -42,7 +42,6 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void EqualsXNull()
         {
             var x = new Definition()
@@ -52,11 +51,10 @@
             };
 
             var c = new DefinitionComparer();
-            c.Equals(null, x);
+            Assert.That(() => c.Equals(null, x), Throws.TypeOf<ArgumentNullException>());
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void EqualsYNull()
         {
             var x = new Definition()
@@ -66,7 +64,7 @@
             };
 
             var c = new DefinitionComparer();
-            c.Equals(x, null);
+            Assert.That(() => c.Equals(x, null), Throws.TypeOf<ArgumentNullException>());
         }
 
         [Test]
@@ -102,11 +100,10 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void GetHashCodeDefinitionNull()
         {
             var c = new DefinitionComparer();
-            c.GetHashCode(null);
+            Assert.That(() => c.GetHashCode(null), Throws.TypeOf<ArgumentNullException>());
         }
     }
 }

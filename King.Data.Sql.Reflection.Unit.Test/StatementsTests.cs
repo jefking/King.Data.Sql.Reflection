@@ -45,11 +45,10 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
         public void GetUnknown()
         {
             var statement = new Statements();
-            Assert.AreEqual(Statements.Tables, statement.Get(SchemaTypes.Unknown));
+            Assert.That(() => statement.Get(SchemaTypes.Unknown), Throws.TypeOf<ArgumentException>());
         }
     }
 }

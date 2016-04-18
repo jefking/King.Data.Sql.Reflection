@@ -27,39 +27,35 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorExecutorNull()
         {
             var statements = Substitute.For<IStatements>();
-            new SchemaReader(null, statements);
+            Assert.That(() => new SchemaReader(null, statements), Throws.TypeOf<ArgumentNullException>());
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorStatementsNull()
         {
             var executor = Substitute.For<IExecutor>();
-            new SchemaReader(executor, null);
+            Assert.That(() => new SchemaReader(executor, null), Throws.TypeOf<ArgumentNullException>());
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void BuildManifestDefinitionsNull()
         {
             var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
             var dl = new SchemaReader(executor, statements);
-            dl.BuildManifest(null, new List<Schema>());
+            Assert.That(() => dl.BuildManifest(null, new List<Schema>()), Throws.TypeOf<ArgumentNullException>());
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void BuildManifestSchemaNull()
         {
             var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
             var dl = new SchemaReader(executor, statements);
-            dl.BuildManifest(new List<Definition>(), null);
+            Assert.That(() => dl.BuildManifest(new List<Definition>(), null), Throws.TypeOf<ArgumentNullException>());
         }
 
         [Test]
@@ -123,13 +119,12 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void MinimizeSchemaNull()
         {
             var executor = Substitute.For<IExecutor>();
             var statements = Substitute.For<IStatements>();
             var dl = new SchemaReader(executor, statements);
-            dl.Minimize(null);
+            Assert.That(() => dl.Minimize(null), Throws.TypeOf<ArgumentNullException>());
         }
 
         [Test]
