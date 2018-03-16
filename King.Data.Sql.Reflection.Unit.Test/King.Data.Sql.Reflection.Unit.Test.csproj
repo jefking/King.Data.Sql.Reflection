@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>King.Data.Sql.Reflection.Unit.Test</RootNamespace>
     <AssemblyName>King.Data.Sql.Reflection.Unit.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -76,9 +76,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\King.Data.Sql.Reflection.45\King.Data.Sql.Reflection.45.csproj">
-      <Project>{e6e922eb-9c22-4ba4-9fde-d0955426fdfe}</Project>
-      <Name>King.Data.Sql.Reflection.45</Name>
+    <ProjectReference Include="..\King.Data.Sql.Reflection\King.Data.Sql.Reflection.csproj">
+      <Project>{5d3bc44e-2834-4d1a-949c-708f85f40f35}</Project>
+      <Name>King.Data.Sql.Reflection</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

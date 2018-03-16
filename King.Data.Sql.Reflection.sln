@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.45", "King.Data.Sql.Reflection.45\King.Data.Sql.Reflection.45.csproj", "{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.Unit.Test", "King.Data.Sql.Reflection.Unit.Test\King.Data.Sql.Reflection.Unit.Test.csproj", "{A7CD34B1-1C10-4AD9-95CA-2DC31D4020BD}"
@@ -15,11 +13,11 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "King.Data.Sql.Reflection.Da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6CF554B0-EABE-4C94-BFE0-CA9B24CAB353}"
 	ProjectSection(SolutionItems) = preProject
-		King.Data.Sql.Reflection.nuspec = King.Data.Sql.Reflection.nuspec
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Data.Sql.Reflection.46", "King.Data.Sql.Reflection.46\King.Data.Sql.Reflection.46.csproj", "{5D3BC44E-2834-4D1A-949C-708F85F40F35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "King.Data.Sql.Reflection", "King.Data.Sql.Reflection\King.Data.Sql.Reflection.csproj", "{5D3BC44E-2834-4D1A-949C-708F85F40F35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6E922EB-9C22-4BA4-9FDE-D0955426FDFE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A7CD34B1-1C10-4AD9-95CA-2DC31D4020BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7CD34B1-1C10-4AD9-95CA-2DC31D4020BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7CD34B1-1C10-4AD9-95CA-2DC31D4020BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,5 +51,8 @@ Global
 		{A7CD34B1-1C10-4AD9-95CA-2DC31D4020BD} = {7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}
 		{28A4B2EB-2EC4-457A-8C3C-253470CE83BD} = {7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}
 		{23AB5E89-B1B3-4717-BE3D-C4DD15D73F28} = {7973CBE9-AF7B-44DB-94A3-ECD21D569AC4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E8C5292-7877-44E9-B74E-01A0BC211312}
 	EndGlobalSection
 EndGlobal
