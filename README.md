@@ -9,3 +9,6 @@ PM> Install-Package King.Data.Sql.Reflection
 
 ### [Wiki](https://github.com/jefking/King.Data.Sql.Reflection/wiki)
 View the wiki to learn how to use this.
+
+### CI
+[![Build status](https://dev.azure.com/jefkin/oss/_apis/build/status/King.Data.Sql.Reflection)](https://dev.azure.com/jefkin/oss/_build/latest?definitionId=22)
