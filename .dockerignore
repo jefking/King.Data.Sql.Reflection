@@ -1,0 +1,16 @@
+**/.git
+**/.gitignore
+**/.vs
+**/.vscode
+**/bin
+**/obj
+**/*.user
+**/*.suo
+**/*.log
+**/TestResults
+**/.idea
+**/packages
+**/*.md
+LICENSE
+icon.png
+icon.ico
